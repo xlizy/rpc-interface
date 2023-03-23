@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+import "Result.proto";
+
+option go_package = "../pbs;rpc_api";
+
+message PasswordLoginReq {
+  Result result = 1;
+  string RequestTicket = 2;
+  string Account = 3;
+  string Password = 4;
+  string Ticket = 5;
+  string RandStr = 6;
+  string RequestIp = 7;
+  string Scenes = 8;
+}
+
+message UserBasicInfo {
+  int64 id = 1;
+  int64 createdBy = 2;
+  string CreatedAt = 3;
+  string UpdatedAt = 4;
+  string userName = 5;
+  string password = 6;
+  string nickName = 7;
+  string name = 8;
+  int32 mobileAreaCode = 9;
+  int64 mobile = 10;
+  string mail = 11;
+  bool enabled = 12;
+  bool accountNonExpired = 13;
+  bool credentialsNonExpired = 14;
+  bool accountNonLocked = 15;
+  bool isDel = 16;
+}
+
+message UserBasicInfoRsp {
+  Result result = 1;
+  UserBasicInfo data = 2;
+}
+
+message MinimalUserInfo {
+  string nickName = 1;
+  string avatar = 2;
+}
+
+message MinimalUserInfoRsp {
+  Result result = 1;
+  MinimalUserInfo data = 2;
+}
+
+message MobileInfo {
+  int32 mobileAreaCode = 1;
+  int64 mobile = 2;
+  string mobileMask = 3;
+}
+
+message MobileInfoRsp {
+  Result result = 1;
+  MobileInfo data = 2;
+}

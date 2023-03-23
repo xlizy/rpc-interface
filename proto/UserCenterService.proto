@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "UserCenterMessage.proto";
+
+option go_package = "../pbs;rpc_api";
+
+service UserCenterService {
+  rpc GetUserBasicByTmpToken (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByUserName (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByMobile (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByMail (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByDingtalkCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByQqCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByWeChatCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicBySinaWeiboCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc BindingMobile (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc ChangeThirdPartyAccountWithLogin (PasswordLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetMinimalUserInfoByUserId (PasswordLoginReq) returns (MinimalUserInfoRsp) {}
+  rpc GetMobileInfoByUserId (PasswordLoginReq) returns (MobileInfoRsp) {}
+}
+
