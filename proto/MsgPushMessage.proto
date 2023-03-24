@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option go_package = "../pbs;rpc_api";
+
+message SendByDingTalkSimpleNoticeReq {
+  bool async = 1;
+  string sourceSystem = 2;
+  string target = 3;
+  string innerCode = 4;
+  map<string, string> templateParam = 5;
+}
+
+message SendSmsReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  string innerCode = 3;
+  repeated string mobiles = 4;
+  map<string, string> templateParam = 5;
+}
+
+message SMSBatchSend{
+  string mobile = 1;
+  map<string, string> templateParam = 2;
+}
+message SendSmsBatchReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  string innerCode = 3;
+  repeated SMSBatchSend data = 4;
+}
+
+message MailFile{
+  string url = 1;
+  string name = 2;
+  string description = 3;
+}
+message SendMailReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  string innerCode = 3;
+  string subject = 4;
+  repeated string to = 5;
+  repeated string cc = 6;
+  repeated string bcc = 7;
+  map<string, string> templateParam = 8;
+  map<string, string> subjectParam = 9;
+  repeated MailFile files = 10;
+}
+
+message SendSmsVerCodeReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  int64 mobile = 3;
+  int32 mobileAreaCode = 4;
+}
+
+message CheckMobileVerCodeReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  int64 mobile = 3;
+  int32 mobileAreaCode = 4;
+  string verCodeValue = 5;
+}
+
+message SendMessageReq{
+  bool async = 1;
+  string sourceSystem = 2;
+  int64 userId = 3;
+  int32 msgType = 4;
+  int32 manual = 5;
+  string title = 6;
+  map<string, string> content = 7;
+}
