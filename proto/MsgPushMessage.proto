@@ -50,16 +50,18 @@ message SendMailReq{
 message SendSmsVerCodeReq{
   bool async = 1;
   string sourceSystem = 2;
-  int64 mobile = 3;
-  int32 mobileAreaCode = 4;
+  string innerCode = 3;
+  int64 mobile = 4;
+  int32 mobileAreaCode = 5;
 }
 
 message CheckMobileVerCodeReq{
   bool async = 1;
   string sourceSystem = 2;
-  int64 mobile = 3;
-  int32 mobileAreaCode = 4;
-  string verCodeValue = 5;
+  string innerCode = 3;
+  int64 mobile = 4;
+  int32 mobileAreaCode = 5;
+  string verCodeValue = 6;
 }
 
 message SendMessageReq{
