@@ -4,15 +4,64 @@ import "Result.proto";
 
 option go_package = "../pbs;rpc_api";
 
-message PasswordLoginReq {
-  Result result = 1;
-  string RequestTicket = 2;
-  string Account = 3;
-  string Password = 4;
-  string Ticket = 5;
-  string RandStr = 6;
-  string RequestIp = 7;
-  string Scenes = 8;
+message GetUserBasicByTmpTokenReq {
+  string tmpToken = 1;
+}
+
+message GetUserBasicByUserNameReq {
+  string userName = 1;
+}
+
+message GetUserBasicByMobileReq {
+  int32 areaCode = 1;
+  int64 mobile = 2;
+}
+
+message GetUserBasicByMailReq {
+  string mail = 1;
+}
+
+message GetUserBasicByDingtalkCodeReq {
+  string dingtalkCode = 1;
+  string dingtalkAppId = 2;
+}
+
+message GetUserBasicByQqCodeReq {
+  string qqCode = 1;
+  string qqAppId = 2;
+  string redirectUri = 3;
+}
+
+message GetUserBasicByWeChatCodeReq {
+  string weChatCode = 1;
+  string weChatAppId = 2;
+}
+
+message GetUserBasicBySinaWeiboCodeReq {
+  string weiboCode = 1;
+  string weiboAppId = 2;
+}
+
+message BindingMobileReq {
+  int32 areaCode = 1;
+  int64 mobile = 2;
+  int64 userId = 3;
+}
+
+message ChangeThirdPartyAccountWithLoginReq {
+  string currentUserIdMask = 1;
+  string targetUserIdMask = 2;
+  string nonce = 3;
+  int64 timestamp = 4;
+  string sign = 5;
+}
+
+message GetMinimalUserInfoByUserIdReq {
+  int64 userId = 1;
+}
+
+message GetMobileInfoByUserIdReq {
+  int64 userId = 1;
 }
 
 message UserBasicInfo {

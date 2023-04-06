@@ -5,17 +5,17 @@ import "UserCenterMessage.proto";
 option go_package = "../pbs;rpc_api";
 
 service UserCenterService {
-  rpc GetUserBasicByTmpToken (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByUserName (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByMobile (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByMail (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByDingtalkCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByQqCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicByWeChatCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetUserBasicBySinaWeiboCode (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc BindingMobile (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc ChangeThirdPartyAccountWithLogin (PasswordLoginReq) returns (UserBasicInfoRsp) {}
-  rpc GetMinimalUserInfoByUserId (PasswordLoginReq) returns (MinimalUserInfoRsp) {}
-  rpc GetMobileInfoByUserId (PasswordLoginReq) returns (MobileInfoRsp) {}
+  rpc GetUserBasicByTmpToken (GetUserBasicByTmpTokenReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByUserName (GetUserBasicByUserNameReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByMobile (GetUserBasicByMobileReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByMail (GetUserBasicByMailReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByDingtalkCode (GetUserBasicByDingtalkCodeReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByQqCode (GetUserBasicByQqCodeReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByWeChatCode (GetUserBasicByWeChatCodeReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicBySinaWeiboCode (GetUserBasicBySinaWeiboCodeReq) returns (UserBasicInfoRsp) {}
+  rpc BindingMobile (BindingMobileReq) returns (UserBasicInfoRsp) {}
+  rpc ChangeThirdPartyAccountWithLogin (ChangeThirdPartyAccountWithLoginReq) returns (UserBasicInfoRsp) {}
+  rpc GetMinimalUserInfoByUserId (GetMinimalUserInfoByUserIdReq) returns (MinimalUserInfoRsp) {}
+  rpc GetMobileInfoByUserId (GetMobileInfoByUserIdReq) returns (MobileInfoRsp) {}
 }
 
