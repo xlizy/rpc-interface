@@ -8,12 +8,13 @@ service UserCenterService {
   rpc GetUserBasicByTmpToken (GetUserBasicByTmpTokenReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByUserName (GetUserBasicByUserNameReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByMobile (GetUserBasicByMobileReq) returns (UserBasicInfoRsp) {}
+  rpc GetUserBasicByMobileRegister (GetUserBasicByMobileRegisterReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByMail (GetUserBasicByMailReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByDingtalkCode (GetUserBasicByDingtalkCodeReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByQqCode (GetUserBasicByQqCodeReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicByWeChatCode (GetUserBasicByWeChatCodeReq) returns (UserBasicInfoRsp) {}
   rpc GetUserBasicBySinaWeiboCode (GetUserBasicBySinaWeiboCodeReq) returns (UserBasicInfoRsp) {}
-  rpc BindingMobile (BindingMobileReq) returns (UserBasicInfoRsp) {}
+  rpc BindingMobile (BindingMobileReq) returns (BindingMobileRsp) {}
   rpc ChangeThirdPartyAccountWithLogin (ChangeThirdPartyAccountWithLoginReq) returns (UserBasicInfoRsp) {}
   rpc GetMinimalUserInfoByUserId (GetMinimalUserInfoByUserIdReq) returns (MinimalUserInfoRsp) {}
   rpc GetMobileInfoByUserId (GetMobileInfoByUserIdReq) returns (MobileInfoRsp) {}

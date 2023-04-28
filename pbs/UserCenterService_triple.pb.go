@@ -28,18 +28,19 @@ const _ = grpc_go.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserCenterServiceClient interface {
-	GetUserBasicByTmpToken(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByUserName(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByMobile(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByMail(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByDingtalkCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByQqCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicByWeChatCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetUserBasicBySinaWeiboCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	BindingMobile(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	ChangeThirdPartyAccountWithLogin(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
-	GetMinimalUserInfoByUserId(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*MinimalUserInfoRsp, common.ErrorWithAttachment)
-	GetMobileInfoByUserId(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*MobileInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByTmpToken(ctx context.Context, in *GetUserBasicByTmpTokenReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByUserName(ctx context.Context, in *GetUserBasicByUserNameReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByMobile(ctx context.Context, in *GetUserBasicByMobileReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByMobileRegister(ctx context.Context, in *GetUserBasicByMobileRegisterReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByMail(ctx context.Context, in *GetUserBasicByMailReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByDingtalkCode(ctx context.Context, in *GetUserBasicByDingtalkCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByQqCode(ctx context.Context, in *GetUserBasicByQqCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicByWeChatCode(ctx context.Context, in *GetUserBasicByWeChatCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetUserBasicBySinaWeiboCode(ctx context.Context, in *GetUserBasicBySinaWeiboCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	BindingMobile(ctx context.Context, in *BindingMobileReq, opts ...grpc_go.CallOption) (*BindingMobileRsp, common.ErrorWithAttachment)
+	ChangeThirdPartyAccountWithLogin(ctx context.Context, in *ChangeThirdPartyAccountWithLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment)
+	GetMinimalUserInfoByUserId(ctx context.Context, in *GetMinimalUserInfoByUserIdReq, opts ...grpc_go.CallOption) (*MinimalUserInfoRsp, common.ErrorWithAttachment)
+	GetMobileInfoByUserId(ctx context.Context, in *GetMobileInfoByUserIdReq, opts ...grpc_go.CallOption) (*MobileInfoRsp, common.ErrorWithAttachment)
 }
 
 type userCenterServiceClient struct {
@@ -47,18 +48,19 @@ type userCenterServiceClient struct {
 }
 
 type UserCenterServiceClientImpl struct {
-	GetUserBasicByTmpToken           func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByUserName           func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByMobile             func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByMail               func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByDingtalkCode       func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByQqCode             func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByWeChatCode         func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicBySinaWeiboCode      func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	BindingMobile                    func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	ChangeThirdPartyAccountWithLogin func(ctx context.Context, in *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetMinimalUserInfoByUserId       func(ctx context.Context, in *PasswordLoginReq) (*MinimalUserInfoRsp, error)
-	GetMobileInfoByUserId            func(ctx context.Context, in *PasswordLoginReq) (*MobileInfoRsp, error)
+	GetUserBasicByTmpToken           func(ctx context.Context, in *GetUserBasicByTmpTokenReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByUserName           func(ctx context.Context, in *GetUserBasicByUserNameReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMobile             func(ctx context.Context, in *GetUserBasicByMobileReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMobileRegister     func(ctx context.Context, in *GetUserBasicByMobileRegisterReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMail               func(ctx context.Context, in *GetUserBasicByMailReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByDingtalkCode       func(ctx context.Context, in *GetUserBasicByDingtalkCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByQqCode             func(ctx context.Context, in *GetUserBasicByQqCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByWeChatCode         func(ctx context.Context, in *GetUserBasicByWeChatCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicBySinaWeiboCode      func(ctx context.Context, in *GetUserBasicBySinaWeiboCodeReq) (*UserBasicInfoRsp, error)
+	BindingMobile                    func(ctx context.Context, in *BindingMobileReq) (*BindingMobileRsp, error)
+	ChangeThirdPartyAccountWithLogin func(ctx context.Context, in *ChangeThirdPartyAccountWithLoginReq) (*UserBasicInfoRsp, error)
+	GetMinimalUserInfoByUserId       func(ctx context.Context, in *GetMinimalUserInfoByUserIdReq) (*MinimalUserInfoRsp, error)
+	GetMobileInfoByUserId            func(ctx context.Context, in *GetMobileInfoByUserIdReq) (*MobileInfoRsp, error)
 }
 
 func (c *UserCenterServiceClientImpl) GetDubboStub(cc *triple.TripleConn) UserCenterServiceClient {
@@ -69,73 +71,79 @@ func NewUserCenterServiceClient(cc *triple.TripleConn) UserCenterServiceClient {
 	return &userCenterServiceClient{cc}
 }
 
-func (c *userCenterServiceClient) GetUserBasicByTmpToken(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByTmpToken(ctx context.Context, in *GetUserBasicByTmpTokenReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByTmpToken", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByUserName(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByUserName(ctx context.Context, in *GetUserBasicByUserNameReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByUserName", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByMobile(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByMobile(ctx context.Context, in *GetUserBasicByMobileReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByMobile", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByMail(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByMobileRegister(ctx context.Context, in *GetUserBasicByMobileRegisterReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+	out := new(UserBasicInfoRsp)
+	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
+	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByMobileRegister", in, out)
+}
+
+func (c *userCenterServiceClient) GetUserBasicByMail(ctx context.Context, in *GetUserBasicByMailReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByMail", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByDingtalkCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByDingtalkCode(ctx context.Context, in *GetUserBasicByDingtalkCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByDingtalkCode", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByQqCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByQqCode(ctx context.Context, in *GetUserBasicByQqCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByQqCode", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicByWeChatCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicByWeChatCode(ctx context.Context, in *GetUserBasicByWeChatCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicByWeChatCode", in, out)
 }
 
-func (c *userCenterServiceClient) GetUserBasicBySinaWeiboCode(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetUserBasicBySinaWeiboCode(ctx context.Context, in *GetUserBasicBySinaWeiboCodeReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetUserBasicBySinaWeiboCode", in, out)
 }
 
-func (c *userCenterServiceClient) BindingMobile(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
-	out := new(UserBasicInfoRsp)
+func (c *userCenterServiceClient) BindingMobile(ctx context.Context, in *BindingMobileReq, opts ...grpc_go.CallOption) (*BindingMobileRsp, common.ErrorWithAttachment) {
+	out := new(BindingMobileRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/BindingMobile", in, out)
 }
 
-func (c *userCenterServiceClient) ChangeThirdPartyAccountWithLogin(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) ChangeThirdPartyAccountWithLogin(ctx context.Context, in *ChangeThirdPartyAccountWithLoginReq, opts ...grpc_go.CallOption) (*UserBasicInfoRsp, common.ErrorWithAttachment) {
 	out := new(UserBasicInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/ChangeThirdPartyAccountWithLogin", in, out)
 }
 
-func (c *userCenterServiceClient) GetMinimalUserInfoByUserId(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*MinimalUserInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetMinimalUserInfoByUserId(ctx context.Context, in *GetMinimalUserInfoByUserIdReq, opts ...grpc_go.CallOption) (*MinimalUserInfoRsp, common.ErrorWithAttachment) {
 	out := new(MinimalUserInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetMinimalUserInfoByUserId", in, out)
 }
 
-func (c *userCenterServiceClient) GetMobileInfoByUserId(ctx context.Context, in *PasswordLoginReq, opts ...grpc_go.CallOption) (*MobileInfoRsp, common.ErrorWithAttachment) {
+func (c *userCenterServiceClient) GetMobileInfoByUserId(ctx context.Context, in *GetMobileInfoByUserIdReq, opts ...grpc_go.CallOption) (*MobileInfoRsp, common.ErrorWithAttachment) {
 	out := new(MobileInfoRsp)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
 	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/GetMobileInfoByUserId", in, out)
@@ -145,18 +153,19 @@ func (c *userCenterServiceClient) GetMobileInfoByUserId(ctx context.Context, in 
 // All implementations must embed UnimplementedUserCenterServiceServer
 // for forward compatibility
 type UserCenterServiceServer interface {
-	GetUserBasicByTmpToken(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByUserName(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByMobile(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByMail(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByDingtalkCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByQqCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicByWeChatCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetUserBasicBySinaWeiboCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	BindingMobile(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	ChangeThirdPartyAccountWithLogin(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error)
-	GetMinimalUserInfoByUserId(context.Context, *PasswordLoginReq) (*MinimalUserInfoRsp, error)
-	GetMobileInfoByUserId(context.Context, *PasswordLoginReq) (*MobileInfoRsp, error)
+	GetUserBasicByTmpToken(context.Context, *GetUserBasicByTmpTokenReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByUserName(context.Context, *GetUserBasicByUserNameReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMobile(context.Context, *GetUserBasicByMobileReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMobileRegister(context.Context, *GetUserBasicByMobileRegisterReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByMail(context.Context, *GetUserBasicByMailReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByDingtalkCode(context.Context, *GetUserBasicByDingtalkCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByQqCode(context.Context, *GetUserBasicByQqCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicByWeChatCode(context.Context, *GetUserBasicByWeChatCodeReq) (*UserBasicInfoRsp, error)
+	GetUserBasicBySinaWeiboCode(context.Context, *GetUserBasicBySinaWeiboCodeReq) (*UserBasicInfoRsp, error)
+	BindingMobile(context.Context, *BindingMobileReq) (*BindingMobileRsp, error)
+	ChangeThirdPartyAccountWithLogin(context.Context, *ChangeThirdPartyAccountWithLoginReq) (*UserBasicInfoRsp, error)
+	GetMinimalUserInfoByUserId(context.Context, *GetMinimalUserInfoByUserIdReq) (*MinimalUserInfoRsp, error)
+	GetMobileInfoByUserId(context.Context, *GetMobileInfoByUserIdReq) (*MobileInfoRsp, error)
 	mustEmbedUnimplementedUserCenterServiceServer()
 }
 
@@ -165,40 +174,43 @@ type UnimplementedUserCenterServiceServer struct {
 	proxyImpl protocol.Invoker
 }
 
-func (UnimplementedUserCenterServiceServer) GetUserBasicByTmpToken(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByTmpToken(context.Context, *GetUserBasicByTmpTokenReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByTmpToken not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByUserName(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByUserName(context.Context, *GetUserBasicByUserNameReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByUserName not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByMobile(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByMobile(context.Context, *GetUserBasicByMobileReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByMobile not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByMail(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByMobileRegister(context.Context, *GetUserBasicByMobileRegisterReq) (*UserBasicInfoRsp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByMobileRegister not implemented")
+}
+func (UnimplementedUserCenterServiceServer) GetUserBasicByMail(context.Context, *GetUserBasicByMailReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByMail not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByDingtalkCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByDingtalkCode(context.Context, *GetUserBasicByDingtalkCodeReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByDingtalkCode not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByQqCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByQqCode(context.Context, *GetUserBasicByQqCodeReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByQqCode not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicByWeChatCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicByWeChatCode(context.Context, *GetUserBasicByWeChatCodeReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicByWeChatCode not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetUserBasicBySinaWeiboCode(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetUserBasicBySinaWeiboCode(context.Context, *GetUserBasicBySinaWeiboCodeReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserBasicBySinaWeiboCode not implemented")
 }
-func (UnimplementedUserCenterServiceServer) BindingMobile(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) BindingMobile(context.Context, *BindingMobileReq) (*BindingMobileRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BindingMobile not implemented")
 }
-func (UnimplementedUserCenterServiceServer) ChangeThirdPartyAccountWithLogin(context.Context, *PasswordLoginReq) (*UserBasicInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) ChangeThirdPartyAccountWithLogin(context.Context, *ChangeThirdPartyAccountWithLoginReq) (*UserBasicInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangeThirdPartyAccountWithLogin not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetMinimalUserInfoByUserId(context.Context, *PasswordLoginReq) (*MinimalUserInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetMinimalUserInfoByUserId(context.Context, *GetMinimalUserInfoByUserIdReq) (*MinimalUserInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMinimalUserInfoByUserId not implemented")
 }
-func (UnimplementedUserCenterServiceServer) GetMobileInfoByUserId(context.Context, *PasswordLoginReq) (*MobileInfoRsp, error) {
+func (UnimplementedUserCenterServiceServer) GetMobileInfoByUserId(context.Context, *GetMobileInfoByUserIdReq) (*MobileInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMobileInfoByUserId not implemented")
 }
 func (s *UnimplementedUserCenterServiceServer) XXX_SetProxyImpl(impl protocol.Invoker) {
@@ -226,7 +238,7 @@ func RegisterUserCenterServiceServer(s grpc_go.ServiceRegistrar, srv UserCenterS
 }
 
 func _UserCenterService_GetUserBasicByTmpToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByTmpTokenReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -248,13 +260,13 @@ func _UserCenterService_GetUserBasicByTmpToken_Handler(srv interface{}, ctx cont
 		FullMethod: "/UserCenterService/GetUserBasicByTmpToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByTmpToken(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByTmpToken(ctx, req.(*GetUserBasicByTmpTokenReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByUserName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByUserNameReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -276,13 +288,13 @@ func _UserCenterService_GetUserBasicByUserName_Handler(srv interface{}, ctx cont
 		FullMethod: "/UserCenterService/GetUserBasicByUserName",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByUserName(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByUserName(ctx, req.(*GetUserBasicByUserNameReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByMobile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByMobileReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -304,13 +316,41 @@ func _UserCenterService_GetUserBasicByMobile_Handler(srv interface{}, ctx contex
 		FullMethod: "/UserCenterService/GetUserBasicByMobile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByMobile(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByMobile(ctx, req.(*GetUserBasicByMobileReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserCenterService_GetUserBasicByMobileRegister_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserBasicByMobileRegisterReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	base := srv.(dubbo3.Dubbo3GrpcService)
+	args := []interface{}{}
+	args = append(args, in)
+	md, _ := metadata.FromIncomingContext(ctx)
+	invAttachment := make(map[string]interface{}, len(md))
+	for k, v := range md {
+		invAttachment[k] = v
+	}
+	invo := invocation.NewRPCInvocation("GetUserBasicByMobileRegister", args, invAttachment)
+	if interceptor == nil {
+		result := base.XXX_GetProxyImpl().Invoke(ctx, invo)
+		return result, result.Error()
+	}
+	info := &grpc_go.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/UserCenterService/GetUserBasicByMobileRegister",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserCenterServiceServer).GetUserBasicByMobileRegister(ctx, req.(*GetUserBasicByMobileRegisterReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByMail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByMailReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -332,13 +372,13 @@ func _UserCenterService_GetUserBasicByMail_Handler(srv interface{}, ctx context.
 		FullMethod: "/UserCenterService/GetUserBasicByMail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByMail(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByMail(ctx, req.(*GetUserBasicByMailReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByDingtalkCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByDingtalkCodeReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -360,13 +400,13 @@ func _UserCenterService_GetUserBasicByDingtalkCode_Handler(srv interface{}, ctx 
 		FullMethod: "/UserCenterService/GetUserBasicByDingtalkCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByDingtalkCode(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByDingtalkCode(ctx, req.(*GetUserBasicByDingtalkCodeReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByQqCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByQqCodeReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -388,13 +428,13 @@ func _UserCenterService_GetUserBasicByQqCode_Handler(srv interface{}, ctx contex
 		FullMethod: "/UserCenterService/GetUserBasicByQqCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByQqCode(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByQqCode(ctx, req.(*GetUserBasicByQqCodeReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicByWeChatCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicByWeChatCodeReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -416,13 +456,13 @@ func _UserCenterService_GetUserBasicByWeChatCode_Handler(srv interface{}, ctx co
 		FullMethod: "/UserCenterService/GetUserBasicByWeChatCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicByWeChatCode(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicByWeChatCode(ctx, req.(*GetUserBasicByWeChatCodeReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetUserBasicBySinaWeiboCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetUserBasicBySinaWeiboCodeReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -444,13 +484,13 @@ func _UserCenterService_GetUserBasicBySinaWeiboCode_Handler(srv interface{}, ctx
 		FullMethod: "/UserCenterService/GetUserBasicBySinaWeiboCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetUserBasicBySinaWeiboCode(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetUserBasicBySinaWeiboCode(ctx, req.(*GetUserBasicBySinaWeiboCodeReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_BindingMobile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(BindingMobileReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -472,13 +512,13 @@ func _UserCenterService_BindingMobile_Handler(srv interface{}, ctx context.Conte
 		FullMethod: "/UserCenterService/BindingMobile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).BindingMobile(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).BindingMobile(ctx, req.(*BindingMobileReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_ChangeThirdPartyAccountWithLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(ChangeThirdPartyAccountWithLoginReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -500,13 +540,13 @@ func _UserCenterService_ChangeThirdPartyAccountWithLogin_Handler(srv interface{}
 		FullMethod: "/UserCenterService/ChangeThirdPartyAccountWithLogin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).ChangeThirdPartyAccountWithLogin(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).ChangeThirdPartyAccountWithLogin(ctx, req.(*ChangeThirdPartyAccountWithLoginReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetMinimalUserInfoByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetMinimalUserInfoByUserIdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -528,13 +568,13 @@ func _UserCenterService_GetMinimalUserInfoByUserId_Handler(srv interface{}, ctx 
 		FullMethod: "/UserCenterService/GetMinimalUserInfoByUserId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetMinimalUserInfoByUserId(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetMinimalUserInfoByUserId(ctx, req.(*GetMinimalUserInfoByUserIdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserCenterService_GetMobileInfoByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PasswordLoginReq)
+	in := new(GetMobileInfoByUserIdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -556,7 +596,7 @@ func _UserCenterService_GetMobileInfoByUserId_Handler(srv interface{}, ctx conte
 		FullMethod: "/UserCenterService/GetMobileInfoByUserId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserCenterServiceServer).GetMobileInfoByUserId(ctx, req.(*PasswordLoginReq))
+		return srv.(UserCenterServiceServer).GetMobileInfoByUserId(ctx, req.(*GetMobileInfoByUserIdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -579,6 +619,10 @@ var UserCenterService_ServiceDesc = grpc_go.ServiceDesc{
 		{
 			MethodName: "GetUserBasicByMobile",
 			Handler:    _UserCenterService_GetUserBasicByMobile_Handler,
+		},
+		{
+			MethodName: "GetUserBasicByMobileRegister",
+			Handler:    _UserCenterService_GetUserBasicByMobileRegister_Handler,
 		},
 		{
 			MethodName: "GetUserBasicByMail",

@@ -17,6 +17,16 @@ message GetUserBasicByMobileReq {
   int64 mobile = 2;
 }
 
+message GetUserBasicByMobileRegisterReq {
+  int32 areaCode = 1;
+  int64 mobile = 2;
+  int32 registerType = 3;
+  int32 registerChannel = 4;
+  int64 ReferrerId = 5;
+  int64 referrerMobile = 6;
+  int32 referrerMobileAreaCode = 7;
+}
+
 message GetUserBasicByMailReq {
   string mail = 1;
 }
@@ -52,7 +62,7 @@ message ChangeThirdPartyAccountWithLoginReq {
   string currentUserIdMask = 1;
   string targetUserIdMask = 2;
   string nonce = 3;
-  int64 timestamp = 4;
+  string timestamp = 4;
   string sign = 5;
 }
 
@@ -86,6 +96,20 @@ message UserBasicInfo {
 message UserBasicInfoRsp {
   Result result = 1;
   UserBasicInfo data = 2;
+}
+
+message ChangeThirdPartyInfo {
+  string currentUserIdMask = 1;
+  string targetUserIdMask = 2;
+  string nonce = 3;
+  string timestamp = 4;
+  string sign = 5;
+}
+
+message BindingMobileRsp {
+  Result result = 1;
+  UserBasicInfo userInfoData = 2;
+  ChangeThirdPartyInfo changeThirdPartyInfoData = 3;
 }
 
 message MinimalUserInfo {

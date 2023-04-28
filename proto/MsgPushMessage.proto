@@ -56,12 +56,10 @@ message SendSmsVerCodeReq{
 }
 
 message CheckMobileVerCodeReq{
-  bool async = 1;
-  string sourceSystem = 2;
-  string innerCode = 3;
-  int64 mobile = 4;
-  int32 mobileAreaCode = 5;
-  string verCodeValue = 6;
+  string innerCode = 1;
+  int64 mobile = 2;
+  int32 mobileAreaCode = 3;
+  string verCodeValue = 4;
 }
 
 message SendMessageReq{
