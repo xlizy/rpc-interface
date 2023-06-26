@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "Result.proto";
+
+option go_package = "../pbs;rpc_api";
+
+message AnalysisTokenReq{
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
+message AnalysisTokenRes {
+  string userId = 1;
+  repeated string roles = 2;
+  string newAccessToken = 3;
+  string newRefreshToken = 4;
+}
+
+message AnalysisTokenRsp {
+  Result result = 1;
+  AnalysisTokenRes data = 2;
+}
+
+message CheckPermissionReq{
+  string accessToken = 1;
+  string refreshToken = 2;
+  string url = 3;
+  string httpMethod = 4;
+}
+
+message CheckPermissionRes {
+  string userId = 1;
+  bool havePermission = 2;
+  string newAccessToken = 3;
+  string newRefreshToken = 4;
+}
+
+message CheckPermissionRsp {
+  Result result = 1;
+  CheckPermissionRes data = 2;
+}

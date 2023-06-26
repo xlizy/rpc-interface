@@ -65,7 +65,7 @@ message CheckMobileVerCodeReq{
 message SendMessageReq{
   bool async = 1;
   string sourceSystem = 2;
-  int64 userId = 3;
+  string userId = 3;
   int32 msgType = 4;
   int32 manual = 5;
   string title = 6;

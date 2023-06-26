@@ -22,7 +22,7 @@ message GetUserBasicByMobileRegisterReq {
   int64 mobile = 2;
   int32 registerType = 3;
   int32 registerChannel = 4;
-  int64 ReferrerId = 5;
+  string ReferrerId = 5;
   int64 referrerMobile = 6;
   int32 referrerMobileAreaCode = 7;
 }
@@ -55,7 +55,7 @@ message GetUserBasicBySinaWeiboCodeReq {
 message BindingMobileReq {
   int32 areaCode = 1;
   int64 mobile = 2;
-  int64 userId = 3;
+  string userId = 3;
 }
 
 message ChangeThirdPartyAccountWithLoginReq {
@@ -67,16 +67,16 @@ message ChangeThirdPartyAccountWithLoginReq {
 }
 
 message GetMinimalUserInfoByUserIdReq {
-  int64 userId = 1;
+  string userId = 1;
 }
 
 message GetMobileInfoByUserIdReq {
-  int64 userId = 1;
+  string userId = 1;
 }
 
 message UserBasicInfo {
-  int64 id = 1;
-  int64 createdBy = 2;
+  string id = 1;
+  string createdBy = 2;
   string CreatedAt = 3;
   string UpdatedAt = 4;
   string userName = 5;
