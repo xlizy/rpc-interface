@@ -96,6 +96,7 @@ message UserBasicInfo {
 message UserBasicInfoRsp {
   Result result = 1;
   UserBasicInfo data = 2;
+  map<string,string> extend = 3;
 }
 
 message ChangeThirdPartyInfo {
