@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "Result.proto";
+
+option go_package = "../pbs;rpc_api";
+
+message CreateShortUrlReq {
+  int32 type = 1;
+  string originUrl = 2;
+  string expireTime = 3;
+  int32 times = 4;
+}
+
+message CreateShortUrlInfo {
+  string key = 1;
+}
+message CreateShortUrlRsp {
+  Result result = 1;
+  CreateShortUrlInfo data = 2;
+}
