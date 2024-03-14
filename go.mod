@@ -1,6 +1,6 @@
 module github.com/xlizy/rpc-interface
 
-go 1.20
+go 1.22
 
 require (
 	dubbo.apache.org/dubbo-go/v3 v3.0.5
