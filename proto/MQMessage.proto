@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "../pbs;rpc_api";
+
+message SendReq {
+  string traceId = 1;
+  string topic = 2;
+  string msg = 3;
+  string clientIp = 4;
+  string appName = 5;
+}

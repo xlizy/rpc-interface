@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "MQMessage.proto";
+import "Result.proto";
+
+option go_package = "../pbs;rpc_api";
+
+service MQService {
+  rpc Send (SendReq) returns (Result) {}
+}
