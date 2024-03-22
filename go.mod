@@ -5,8 +5,8 @@ go 1.22
 require (
 	dubbo.apache.org/dubbo-go/v3 v3.0.5
 	github.com/dubbogo/grpc-go v1.42.10
-	github.com/dubbogo/triple v1.2.2-rc2
-	google.golang.org/protobuf v1.29.0
+	github.com/dubbogo/triple v1.2.2-rc3
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
