@@ -28,7 +28,7 @@ const _ = grpc_go.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MQServiceClient interface {
-	Send(ctx context.Context, in *SendReq, opts ...grpc_go.CallOption) (*Result, common.ErrorWithAttachment)
+	SendMQ(ctx context.Context, in *SendMQReq, opts ...grpc_go.CallOption) (*Result, common.ErrorWithAttachment)
 }
 
 type mQServiceClient struct {
@@ -36,7 +36,7 @@ type mQServiceClient struct {
 }
 
 type MQServiceClientImpl struct {
-	Send func(ctx context.Context, in *SendReq) (*Result, error)
+	SendMQ func(ctx context.Context, in *SendMQReq) (*Result, error)
 }
 
 func (c *MQServiceClientImpl) GetDubboStub(cc *triple.TripleConn) MQServiceClient {
@@ -51,17 +51,17 @@ func NewMQServiceClient(cc *triple.TripleConn) MQServiceClient {
 	return &mQServiceClient{cc}
 }
 
-func (c *mQServiceClient) Send(ctx context.Context, in *SendReq, opts ...grpc_go.CallOption) (*Result, common.ErrorWithAttachment) {
+func (c *mQServiceClient) SendMQ(ctx context.Context, in *SendMQReq, opts ...grpc_go.CallOption) (*Result, common.ErrorWithAttachment) {
 	out := new(Result)
 	interfaceKey := ctx.Value(constant.InterfaceKey).(string)
-	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/Send", in, out)
+	return out, c.cc.Invoke(ctx, "/"+interfaceKey+"/SendMQ", in, out)
 }
 
 // MQServiceServer is the server API for MQService service.
 // All implementations must embed UnimplementedMQServiceServer
 // for forward compatibility
 type MQServiceServer interface {
-	Send(context.Context, *SendReq) (*Result, error)
+	SendMQ(context.Context, *SendMQReq) (*Result, error)
 	mustEmbedUnimplementedMQServiceServer()
 }
 
@@ -70,8 +70,8 @@ type UnimplementedMQServiceServer struct {
 	proxyImpl protocol.Invoker
 }
 
-func (UnimplementedMQServiceServer) Send(context.Context, *SendReq) (*Result, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Send not implemented")
+func (UnimplementedMQServiceServer) SendMQ(context.Context, *SendMQReq) (*Result, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendMQ not implemented")
 }
 func (s *UnimplementedMQServiceServer) XXX_SetProxyImpl(impl protocol.Invoker) {
 	s.proxyImpl = impl
@@ -101,8 +101,8 @@ func RegisterMQServiceServer(s grpc_go.ServiceRegistrar, srv MQServiceServer) {
 	s.RegisterService(&MQService_ServiceDesc, srv)
 }
 
-func _MQService_Send_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendReq)
+func _MQService_SendMQ_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc_go.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendMQReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -114,7 +114,7 @@ func _MQService_Send_Handler(srv interface{}, ctx context.Context, dec func(inte
 	for k, v := range md {
 		invAttachment[k] = v
 	}
-	invo := invocation.NewRPCInvocation("Send", args, invAttachment)
+	invo := invocation.NewRPCInvocation("SendMQ", args, invAttachment)
 	if interceptor == nil {
 		result := base.XXX_GetProxyImpl().Invoke(ctx, invo)
 		return result, result.Error()
@@ -138,8 +138,8 @@ var MQService_ServiceDesc = grpc_go.ServiceDesc{
 	HandlerType: (*MQServiceServer)(nil),
 	Methods: []grpc_go.MethodDesc{
 		{
-			MethodName: "Send",
-			Handler:    _MQService_Send_Handler,
+			MethodName: "SendMQ",
+			Handler:    _MQService_SendMQ_Handler,
 		},
 	},
 	Streams:  []grpc_go.StreamDesc{},

@@ -6,5 +6,5 @@ import "Result.proto";
 option go_package = "../pbs;rpc_api";
 
 service MQService {
-  rpc Send (SendReq) returns (Result) {}
+  rpc SendMQ (SendMQReq) returns (Result) {}
 }

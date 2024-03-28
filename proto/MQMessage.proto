@@ -2,10 +2,9 @@ syntax = "proto3";
 
 option go_package = "../pbs;rpc_api";
 
-message SendReq {
-  string traceId = 1;
-  string topic = 2;
-  string msg = 3;
-  string clientIp = 4;
-  string appName = 5;
+message SendMQReq {
+  string topic = 1;
+  string msg = 2;
+  string clientIp = 3;
+  string appName = 4;
 }
