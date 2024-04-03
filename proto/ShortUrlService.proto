@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "ShortUrlMessage.proto";
 
-option go_package = "../pbs;rpc_api";
+option go_package = "../pbs;rpcApi";
 
 service ShortUrlService {
   rpc CreateShortUrl (CreateShortUrlReq) returns (CreateShortUrlRsp) {}

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "Result.proto";
 
-option go_package = "../pbs;rpc_api";
+option go_package = "../pbs;rpcApi";
 
 message AnalysisTokenReq{
   string accessToken = 1;

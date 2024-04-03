@@ -3,7 +3,7 @@ syntax = "proto3";
 import "MsgPushMessage.proto";
 import "Result.proto";
 
-option go_package = "../pbs;rpc_api";
+option go_package = "../pbs;rpcApi";
 
 service MsgPushService {
   rpc SendByDingTalkSimpleNotice (SendByDingTalkSimpleNoticeReq) returns (Result) {}

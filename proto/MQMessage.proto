@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "../pbs;rpc_api";
+option go_package = "../pbs;rpcApi";
 
 message SendMQReq {
   string topic = 1;

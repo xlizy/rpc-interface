@@ -4,7 +4,7 @@
 // - protoc             v4.25.3
 // source: MsgPushService.proto
 
-package rpc_api
+package rpcApi
 
 import (
 	context "context"

@@ -4,7 +4,7 @@
 // - protoc             v4.25.3
 // source: MQService.proto
 
-package rpc_api
+package rpcApi
 
 import (
 	context "context"
