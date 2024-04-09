@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "XMQMessage.proto";
+import "Result.proto";
+
+option go_package = "../pbs;rpcApi";
+
+service XMQService {
+  rpc SendXMQ (SendXMQReq) returns (Result) {}
+}

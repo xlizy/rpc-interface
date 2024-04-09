@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "../pbs;rpcApi";
 
-message SendMQReq {
+message SendXMQReq {
   string topic = 1;
   string msg = 2;
   string clientIp = 3;

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "SysMessage.proto";
-
-option go_package = "../pbs;rpcApi";
-
-service AuthService {
-  rpc GetRoles (GetRolesReq) returns (GetRolesRsp) {}
-}
